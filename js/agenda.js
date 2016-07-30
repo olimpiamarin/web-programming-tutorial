@@ -17,7 +17,8 @@ function getRow(person) {
 
 //primeste un json, aici se incarca agenda, ajax = functie
 $.ajax({
-    url: "js/mocks/load-contacts.json",
+   // url: "js/mocks/load-contacts.json",
+    url: "servlets/load-contacts.php",
     dataType: 'json',
     cache:false
     //punem buton de delete
@@ -29,8 +30,10 @@ $.ajax({
 //functie de stergere
 function removeContact(id) {
     $.ajax({
-        url: "js/mocks/remove-contact.json",
+        //url: "js/mocks/remove-contact.json",
+        url: "servlets/remove-contact.php",
         type: 'POST',
+        dataType: 'json',
         data: {
             id: id
         }
