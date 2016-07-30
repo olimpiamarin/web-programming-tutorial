@@ -53,3 +53,36 @@ Lesson 2 Plan
         cd c:\Progs\apache-tomcat-8.0.20\webapps
         mklink /J web-tutorial c:\Producs\web-programming-tutorial
 
+## Personal Notes
+
+Laboratorul 13 - Jquery, Ajax
+
+In code-examples avem:
+- byId - in functia utils.js -> sunt shorcuturi cand voi folosi byId ma va trimite 
+	ceea ce am nevoie. El va face hide si show in functions.js
+
+Utilitatile sunt f utile pentru usurarea muncii. Show si Hide!
+
+Functii: widgeturi
+
+- onclick - este metoda 
+- initWidget - initealizeaza metoda 
+
+
+!!! Dublarea unei linii CTRL+D
+
+JQuery:
+!!!! $() - este o functie - REGULA!!!!
+!! $ este si Json si functie si metoda - are multe utilitati!!!
+!! daca vrei sa gasesti ceva ex: id folosesti #+id-ul respectiv
+
+Ajax : vom cere de pe server sa ne dea date
+
+CTRL + R (find and replace) FOARTE TARE 
+
+TEMA: 
+
+- sa cream EDIT sa putem schimba 
+- sa dam persoana cu id-ul respectiv (jquery)
+- sa cream SAVE 
+

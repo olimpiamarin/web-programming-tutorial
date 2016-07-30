@@ -1,6 +1,7 @@
 [
-  {"id": 1, "phone": "01246425753", "firstName": "Nicolae", "lastName": "Matei"},
-  {"id": 2, "phone": "01246425753", "firstName": "Andrei", "lastName": "I"},
-  {"id": 3, "phone": "01246425753", "firstName": "Sebi", "lastName": "Y"},
-  {"id": 4, "phone": "01246425753", "firstName": "Oana", "lastName": "R"}
+  {"id":1,"firstName": "Nicolae","lastName": "Matei","telefon": "0742586394"},
+  {"id":2,"firstName": "Butuc","lastName": "Manuela","telefon": "0743043212"},
+  {"id":3,"firstName": "Voinea","lastName": "Andrei","telefon": "0756123852"},
+  {"id":4,"firstName": "Marin","lastName": "Oana","telefon": "0742584639"},
+  {"id":5,"firstName": "Marin","lastName": "Voicu","telefon": "0743043123"}
 ]

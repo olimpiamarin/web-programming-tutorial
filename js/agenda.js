@@ -1,75 +1,76 @@
 console.debug('1) loading agenda');
 
+//json
 function getRow(person) {
-    var row = '<tr>'+
-        '<td>' + person.firstName + '</td>'+
-        '<td>' + person.lastName + '</td>'+
-        '<td>07560000001</td>'+
+
+    var row = '<tr>' +
+        '<td>' + person.firstName + '</td>' +
+        '<td>' + person.lastName + '</td>' +
+        '<td>' + person.telefon + '</td>' +
         '<td>' +
-            '<button class="edit" data-id="' + person.id + '">edit</button> ' +
-            '<button class="remove" data-id="' + person.id + '">x</button>' +
-        '</td>'+
+            //'<button class="edit" data-id="' + person.id + '">edit</button></td>' +
+            '<button class="remove" data-id="' + person.id + '">x</button></td>' +
         '</tr>';
+
     return row;
 }
 
+//primeste un json, aici se incarca agenda, ajax = functie
 $.ajax({
-    url: "js/mocks/load-contacts.json"
-}).done(function(result) {
+    url: "js/mocks/load-contacts.json",
+    dataType: 'json',
+    cache:false
+    //punem buton de delete
+}).done(function (result) {
     console.debug('3) ajax done', result);
     showContacts(result);
 });
 
+//functie de stergere
 function removeContact(id) {
     $.ajax({
         url: "js/mocks/remove-contact.json",
-        //type: 'DELETE',
         type: 'POST',
         data: {
             id: id
         }
-    }).done(function(result) {
+        //punem buton de delete
+    }).done(function (result) {
         showContacts(result);
     });
 }
 
 console.debug('2) after ajax');
 
-var allContacts = [];
+//afisam contactele
 function showContacts(contacts) {
-    allContacts = contacts;
+    //punem o functie sa stearga datele inainte sa le repuna actualizate
     $('#agenda tbody').html('');
-    for(var i = 0; i < contacts.length; i++) {
+    for (var i = 0; i < contacts.length; i++) {
         var person = contacts[i];
         $('#agenda tbody').append(getRow(person));
     }
+
 }
 
-function findContactById(id) {
-    for(var i = 0; i < allContacts.length; i++) {
-        if(allContacts[i].id == id) {
-            return allContacts[i];
-        }
-    }
-    return null;
-}
 
-function editContact(id) {
-    var person = findContactById(id);
-    $("[name='id']").val(person.id);
-    $("[name='firstName']").val(person.firstName);
-    $("[name='lastName']").val(person.lastName);
-    $("[name='phone']").val(person.phone);
-}
-
-$('#agenda').on('click', 'button.remove', function(){
+//stergere id facem jsonul pt sergere - metoda imbunatatita
+$('#agenda').on('click', 'button.remove', function () {
     var id = $(this).data('id');
     console.info('remove this contact', this, id);
     removeContact(id);
 });
 
-$('#agenda').on('click', 'button.edit', function(){
-    var id = $(this).data('id');
-    console.info('edit this contact', this, id);
-    editContact(id);
-});
+
+//TEMA --->
+//function editContacts(id){
+//    $("[name='Nume']").val
+
+
+
+////adaugam buton edit + add
+//$('#agenda').on('click', 'button.edit', function () {
+//    var id = $(this).data('id');
+//    console.info('edit this contact', this, id);
+//    removeContact(id);
+//});
