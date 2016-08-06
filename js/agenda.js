@@ -6,7 +6,7 @@ function getRow(person) {
     var row = '<tr>' +
         '<td>' + person.firstName + '</td>' +
         '<td>' + person.lastName + '</td>' +
-        '<td>' + person.telefon + '</td>' +
+        '<td>' + person.phone + '</td>' +
         '<td>' +
             //'<button class="edit" data-id="' + person.id + '">edit</button></td>' +
             '<button class="remove" data-id="' + person.id + '">x</button></td>' +

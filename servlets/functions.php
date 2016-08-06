@@ -1,4 +1,11 @@
 <?php
+
+function getConnection(){
+    return  pg_connect("host=54.93.65.5 port=5432 dbname=4_Olimpia user=fasttrackit_dev password=fasttrackit_dev");
+    //connect to a database table
+
+}
+
 function getContacts($conn){
     $result = pg_query($conn, "select * from agenda");
     $records = array();
@@ -14,4 +21,7 @@ function getContacts($conn){
     }
     return $records;
 }
+
+
+
 ?>
