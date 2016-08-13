@@ -1,7 +1,7 @@
 <?php include ("header-tpl.php") ?>
             <div id="breadcrumb">HOME : welcome home</div>
 
-            <h1>Homework</h1>
+        <!--    <h1>Homework</h1>
             <p>Write some info about you.</p>
             <p>
                 Make this web site as you wish. Change/Add any <strong>attributes</strong> you have learned in this example.
@@ -22,4 +22,14 @@
                 <li>Make all widgets collapsible</li>
             </ol>
             <p>I hope is all clear.</p>
+            -->
+
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <h1><?php the_title(); ?></h1>
+
+    <p><?php the_content(__('(more...)')); ?></p>
+    <hr> <?php endwhile; else: ?>
+    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+
 <?php include ("footer-tpl.php") ?>

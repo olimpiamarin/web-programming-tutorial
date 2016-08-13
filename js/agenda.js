@@ -16,9 +16,10 @@ function getRow(person) {
 }
 
 //primeste un json, aici se incarca agenda, ajax = functie
+function loadContacts(){
 $.ajax({
    // url: "js/mocks/load-contacts.json",
-    url: "servlets/load-contacts.php",
+    url: template_directory_uri + "/servlets/load-contacts.php",
     dataType: 'json',
     cache:false
     //punem buton de delete
@@ -26,6 +27,11 @@ $.ajax({
     console.debug('3) ajax done', result);
     showContacts(result);
 });
+}
+if($('#agenda').length){
+    loadContacts();
+}
+
 
 //functie de stergere
 function removeContact(id) {
