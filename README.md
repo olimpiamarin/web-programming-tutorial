@@ -86,3 +86,9 @@ TEMA:
 - sa dam persoana cu id-ul respectiv (jquery)
 - sa cream SAVE 
 
+
+Bootstrap
+
+- este o librarie CSS 
+-JS Boot - are nevoie de Jquery ca sa functioneze 
+

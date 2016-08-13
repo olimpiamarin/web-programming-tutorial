@@ -1,0 +1,12 @@
+.borders {
+    border: 1px solid grey;
+}
+.b-red {
+    border-color: red;
+}
+.b-green {
+    border-color: greenyellow;
+}
+.b-blue {
+    border-color: deepskyblue;
+}
